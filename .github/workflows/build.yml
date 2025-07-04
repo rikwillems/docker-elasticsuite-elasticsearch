@@ -12,6 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         cfg:
+          - { MAJOR_VERSION: "6", MINOR_VERSION: "8", PATCH_VERSION: "23" }
           - { MAJOR_VERSION: "7", MINOR_VERSION: "17", PATCH_VERSION: "29" }
           - { MAJOR_VERSION: "8", MINOR_VERSION: "17", PATCH_VERSION: "8" }
           - { MAJOR_VERSION: "8", MINOR_VERSION: "18", PATCH_VERSION: "3" }
