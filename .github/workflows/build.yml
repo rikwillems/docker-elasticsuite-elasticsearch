@@ -1,6 +1,8 @@
 name: Build Docker images
 on:
   push:
+    branches:
+      - main
   pull_request:
   schedule:
     - cron: '15 3 * * *'
@@ -39,6 +41,8 @@ jobs:
       - name: "Build & tag image (optionally push)"
         uses: docker/build-push-action@v5
         with:
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           builder: ${{ steps.buildx.outputs.name }}
           context: .
           platforms: linux/amd64,linux/arm64
